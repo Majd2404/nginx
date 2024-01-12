@@ -25,3 +25,19 @@ A reverse proxy is a server that sits in front of one or more web servers and ac
 - **Enhanced Security:** Provides an additional layer of protection against attacks.
 - **Increased Scalability:** Allows you to easily add more backend servers to handle growing traffic.
 - **Simplified Management:** Centralizes configuration and management of multiple backend servers.
+
+## Example Nginx Configuration
+
+Here's an example of a reverse proxy configuration in Nginx:
+
+```nginx
+server {
+    listen 80;  # Listen for incoming requests on port 80
+    server_name yourdomain.com;  # Server name to match
+
+    location / {
+        proxy_pass http://backend_server_ip:backend_server_port;  # Forward requests to the backend server
+        proxy_set_header Host $host;  # Preserve the original host header
+        proxy_set_header X-Real-IP $remote_addr;  # Set the client's IP address in the header
+    }
+}
