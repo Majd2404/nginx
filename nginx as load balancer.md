@@ -26,6 +26,7 @@ http {
         }
     }
 }
+```
 
 ### Least Connections Load Balancing
 
@@ -48,6 +49,7 @@ server {
         proxy_pass http://backend;
     }
 }
+```
 
 ### IP Hash Load Balancing
 
@@ -69,6 +71,7 @@ server {
         proxy_pass http://backend;
     }
 }
+```
 
 ### Least Time Load Balancing
 
@@ -90,5 +93,5 @@ server {
         proxy_pass http://backend;
     }
 }
-
+```
 
